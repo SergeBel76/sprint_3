@@ -25,10 +25,10 @@ pip install -r requirements.txt
 3. Добавлен визуальный интерфейс Swagger. За основу при установке взят следующий [источник](https://appliku.com/post/django-rest-framework-swagger-openapi-tutorial)
 Его работа доступна по адресу /api/schema/swagger-ui, для генерирования документации /api/schema/redoc/
 4. Код приложения был покрыт тестами, установлена библиотека coverage. 
-5. Проект размещен на хостинге http://akchuranne.pythonanywhere.com В нем используется база данных db.sqlite3.
+5. Проект размещен на хостинге http://akchuranne.pythonanywhere.com/, используется база данных db.sqlite3.
 Рабочий проект на базе данных PostgreSQL(конвертация с помощью ./manage.py dumpdata > dump.json,
 ./manage.py loaddata dump.json)
-Примеры вызова REST API с хостинга http://akchuranne.pythonanywhere.com/api/submitData/pereval/3/ - получение информации о перевале по его id.
+Примеры вызова REST API с хостинга http://akchuranne.pythonanywhere.com/api/submitData/pereval/3/ - получение информации о местоположении по его id.
 http://akchuranne.pythonanywhere.com/api/submitData/user__email=sendmailsend@yandex.ru - список данных обо всех объектах, созданных пользователем с электронной почтой sendmailsend@yandex.ru,
 
 
@@ -41,19 +41,19 @@ http://akchuranne.pythonanywhere.com/api/submitData/user__email=sendmailsend@yan
 python manage.py createsuperuser
 ```
 5. По адресу /api/submitData/user__email=<str:email> или /api/schema/swagger-ui/#/api/api_submitData_user__email%3D_list  можно с помощью GET получить список данных обо всех объектах, которые пользователь с почтой <email> отправил на сервер.
-Пример JSON-запроса для создания, редактирования сведений о перевале:
+Пример JSON-запроса для создания, редактирования сведений о местности:
 ```
 {
-    "beauty_title": "Куркурек",
-    "title": "Северо-Чуйский хребет",
-    "other_titles": "Звенящий",
+    "beauty_title": "Высокая гора",
+    "title": "Северный хребет",
+    "other_titles": "Водопад №1",
     "connect": "",
     "user": {
-        "email": "proba2@yandex.ru",
-        "fam": "Иванов",
+        "email": "zamtex@bk.ru",
+        "fam": "Петров",
         "name": "Петр",
-        "otc": "Михайлович",
-        "phone": "89167854534"
+        "otc": "Петрович",
+        "phone": "89162922020"
     },
     "coords": {
         "latitude": 50.12536,
